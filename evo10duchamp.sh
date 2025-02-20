@@ -9,6 +9,9 @@ repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
 # Download duchamp manifests
 git clone https://github.com/MAG-45/evox_manifest_duchamp .repo/local_manifests
 
+# Patch EvolutionX manifest
+sed -i '/<project path="hardware\/lineage\/compat" name="LineageOS\/android_hardware_lineage_compat" \/>/d' .repo/manifests/snippets/lineage.xml
+
 # Copy singins keys 
 cp keys/* vendor/evolution-priv/keys
 
