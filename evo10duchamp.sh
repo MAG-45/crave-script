@@ -29,6 +29,6 @@ cd ../..
 # Start building
 . build/envsetup.sh
 
-lunch lineage-duchamp_apa4_userdebug
+lunch lineage_duchamp-apa4-userdebug
 
 m evolution
