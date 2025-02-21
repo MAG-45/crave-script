@@ -34,7 +34,7 @@ ln -s build/make/target/product/security/BUILD.bazel vendor/evolution-priv/keys/
 echo "Copy keys"
 
 # Start building
-source build/envsetup.sh
+. build/envsetup.sh
 
 lunch lineage_duchamp-apa4-userdebug
 
