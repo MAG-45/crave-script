@@ -14,10 +14,10 @@ echo "Clone manifests for duchamp"
 
 
 # Patch EvolutionX manifest
-#sed -i '/<project path="hardware\/lineage\/compat" name="LineageOS\/android_hardware_lineage_compat" \/>/d' .repo/manifests/snippets/lineage.xml
+sed -i '/<project path="hardware\/lineage\/compat" name="LineageOS\/android_hardware_lineage_compat" \/>/d' .repo/manifests/snippets/lineage.xml
 # Remove problematic tree 
-#rm -rf hardware/lineage/compat/
-#echo "Patch lineage manifest"
+rm -rf hardware/lineage/compat/
+echo "Patch lineage manifest"
 
 # Patch FP Sensors
 cd frameworks/base
