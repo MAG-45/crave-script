@@ -37,6 +37,6 @@ echo "Copy keys"
 # Start building
 . build/envsetup.sh
 
-lunch lineage_duchamp-apa4-userdebug
+lunch lineage_duchamp-ap4a-userdebug
 
 m evolution
