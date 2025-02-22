@@ -27,16 +27,6 @@ echo "###########################"
 echo "####FP PATCHING############"
 echo "###########################"
 
-
-# Patch OTA
-cd packages/apps/Updater
-curl https://raw.githubusercontent.com/MAG-45/evox_init-build/refs/heads/main/0001-Change-URL-Strings.patch --output 0001-Change-URL-Strings.patch
-git am < 0001-Change-URL-Strings.patch
-cd ../../../
-echo "###########################"
-echo "####OTA PATCHING###########"
-echo "###########################"
-
 # Crave sync 
 /opt/crave/resync.sh
 
