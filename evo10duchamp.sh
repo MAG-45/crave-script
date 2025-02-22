@@ -12,7 +12,6 @@ echo "Init EvoX Manifest"
 git clone https://github.com/MAG-45/evox_manifest_duchamp .repo/local_manifests
 echo "Clone manifests for duchamp"
 
-
 # Patch EvolutionX manifest
 sed -i '/<project path="hardware\/lineage\/compat" name="LineageOS\/android_hardware_lineage_compat" \/>/d' .repo/manifests/snippets/lineage.xml
 # Remove problematic tree 
@@ -24,21 +23,22 @@ cd frameworks/base
 git fetch https://github.com/snapboss/android_frameworks_base
 git cherry-pick -Xtheirs 53ebff0802f1043f361c699442a982b5b6e7792a   
 cd ../..
+echo "###########################"
+echo "####FP PATCHING############"
+echo "###########################"
+
 
 # Patch OTA
 cd packages/apps/Updater
 curl https://raw.githubusercontent.com/MAG-45/evox_init-build/refs/heads/main/0001-Change-URL-Strings.patch --output 0001-Change-URL-Strings.patch
 git am < 0001-Change-URL-Strings.patch
 cd ../../../
+echo "###########################"
+echo "####OTA PATCHING###########"
+echo "###########################"
 
 # Crave sync 
 /opt/crave/resync.sh
-
-# Copy singins keys 
-mkdir vendor/evolution-priv/keys/ -p
-cp keys/* vendor/evolution-priv/keys/
-ln -s build/make/target/product/security/BUILD.bazel vendor/evolution-priv/keys/BUILD.bazel
-echo "Copy keys"
 
 # Start building
 . build/envsetup.sh
