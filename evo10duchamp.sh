@@ -26,10 +26,10 @@ git cherry-pick -Xtheirs 53ebff0802f1043f361c699442a982b5b6e7792a
 cd ../..
 
 # Patch OTA
-cd vendor/lineage
-wget https://raw.githubusercontent.com/MAG-45/evox_init-build/refs/heads/main/0001-Make-OTA-Working-for-unofficial.patch
-git am < 0001-Make-OTA-Working-for-unofficial.patch
-cd ../..
+cd packages/apps/Updater
+curl https://raw.githubusercontent.com/MAG-45/evox_init-build/refs/heads/main/0001-Change-URL-Strings.patch --output 0001-Change-URL-Strings.patch
+git am < 0001-Change-URL-Strings.patch
+cd ../../../
 
 # Crave sync 
 /opt/crave/resync.sh
