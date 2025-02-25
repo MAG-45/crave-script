@@ -20,8 +20,8 @@ echo "Patch lineage manifest"
 
 # Patch FP Sensors
 cd frameworks/base
-git fetch https://github.com/snapboss/android_frameworks_base
-git cherry-pick -Xtheirs 53ebff0802f1043f361c699442a982b5b6e7792a   
+curl -O https://raw.githubusercontent.com/MAG-45/duchamp_patch/refs/heads/vic_evo/fp_evo.patch
+git am < fp_evo.patch
 cd ../..
 echo "###########################"
 echo "####FP PATCHING############"
